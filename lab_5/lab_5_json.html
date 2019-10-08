@@ -10,11 +10,11 @@
       <div class="wrapper">
         <div class="header">Test JSON page</div>
         <script>
-          function goCountries {
-        for (i in countries) {
-          x+= countries[i];
-        }
+            function goCountries {
+          for (i in countries) {
+            x+= countries[i];
           }
+            }
         </script>
         <button class="button" onclick="loadData(JSON.stringify(countries))">
           Load Some JSON
@@ -41,7 +41,7 @@
             </li>
           </ul>
         </div>
-        <p id="pasteHere"></p>
+        <p id="pasteHere">hello</p>
         <div class="footer"></div>
       </div>
     </div>
@@ -292,10 +292,10 @@
         { name: "Zambia", code: "ZM" },
         { name: "Zimbabwe", code: "ZW" }
       ];
-      let space="";
+      let space = "";
       countries.forEach(myFunction);
-      document.getElementById("pasteHere").innerHTML=space;
-      function myFunction(name, code){
+      document.getElementById("pasteHere").innerHTML = space;
+      function myFunction(name, code) {
         text = text + name + "<br>";
       }
       console.log("List of countries in the world", countries);
