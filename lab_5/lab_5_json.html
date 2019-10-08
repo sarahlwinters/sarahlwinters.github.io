@@ -9,11 +9,17 @@
     <div class="container">
       <div class="wrapper">
         <div class="header">Test JSON page</div>
-        <button class="button" onclick="loadData()">Load Some JSON</button>
-        <button
-          class="button"
-          onclick="console.log('You haven\'t written a function yet!');"
-        >
+        <script>
+          function goCountries {
+        for (i in countries) {
+          x+= countries[i];
+        }
+          }
+        </script>
+        <button class="button" onclick="loadData(JSON.stringify(countries))">
+          Load Some JSON
+        </button>
+        <button class="button" onclick="console.log(goCountries);">
           Click me to replace list entries
         </button>
         <div class="content">
