@@ -19,7 +19,7 @@
         <button class="button" onclick="loadData(JSON.stringify(countries))">
           Load Some JSON
         </button>
-        <button class="button" onclick="console.log(myFunction);">
+        <button class="button" onclick="console.log(countries);">
           Click me to replace list entries
         </button>
         <div class="content">
@@ -41,7 +41,7 @@
             </li>
           </ul>
         </div>
-        <p id="pasteHere">hello</p>
+        <p id="pasteHere"></p>
         <div class="footer"></div>
       </div>
     </div>
@@ -296,7 +296,7 @@
       countries.forEach(myFunction);
       document.getElementById("pasteHere").innerHTML = space;
       function myFunction(name, code) {
-        text = text + name + "<br>";
+        space = space + name + "<br>";
       }
       console.log("List of countries in the world", countries);
     </script>
