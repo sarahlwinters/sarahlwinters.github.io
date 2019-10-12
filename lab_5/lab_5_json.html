@@ -292,17 +292,13 @@
         const json = sessionStorage.getItem("countries_arr");
         const list = JSON.parse(json);
         const element = document.querySelector(".cList");
-        let countryNames = "";
-        //for (let i = 0; i < list.length; i += 1) {
-         // countryNames += "<li>"+list[i].name+"</li>";
-        //}
-        
-        
+        let countriesList = "";
+          
         for (let i = 0; i < 50; i += 1) {
           random = randomNumber(1,50);
-          countryNames += "<li>"+list[random].name+"</li>";
+          countriesList += "<li>"+list[random].name+"</li>";
         }
-        document.getElementById("instructions").innerHTML = countryNames;
+        document.getElementById("instructions").innerHTML = countriesList;
 
       function randomNumber(min, max) {
         min = Math.ceil(min);
