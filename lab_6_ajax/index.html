@@ -1,28 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <title>Test AJAX page</title>
+    <link rel="stylesheet" type="text/css" href="./lab_styles.css" />
+  </head>
 
-<head>
-  <title>Test AJAX page</title>
-  <link rel="stylesheet" type="text/css" href="./lab_styles.css">
-</head>
-
-<body>
-  <div class="container">
-    <div class="wrapper">
-      <div class="header">Test AJAX page</div>
-      <button class="button" onclick="loadData()">Load Some JSON</button>
-      <div class="content"></div>
-      <div class="footer"></div>
+  <body>
+    <div class="container">
+      <div class="wrapper">
+        <div class="header">Test AJAX page</div>
+        <button class="button" onclick="loadData()">Load Some JSON</button>
+        <div class="content">
+            <ol class="list">
+                <li>Click button to replace me.</li>
+            </ol>
+        </div>
+        <div class="footer"></div>
+      </div>
     </div>
-  </div>
-  <script>
-    function loadData() {
-      fetch('ajax_sample.json')
-        .then(res => res.json())
-        .then(res => res.map(c => c.code))
-        .then(codes => document.querySelector(".content").innerText = codes);
-    }
-  </script>
-</body>
+    <script>
+      function loadData() {
+        fetch("ajax_sample.json")
+          .then(res => res.json())
+          .then(res => res.map(c => c.name + ", " + c.code))
+          .then(data => {
+              const element = document.querySelector(".list")
+              element.innerHTML = " ";
 
+              for (let i = 0; i < 15; i += 1) {
+                countriesList = "<li>" + data[randomNumber(0,242)] + "</li>";
+                element.innerHTML += countriesList;
+              }
+              return data;
+            });
+            }
+            function randomNumber(min, max) {
+                min = Math.ceil(min);
+                max = Math.floor(max);
+                return Math.floor(Math.random() * (max - min + 1)) + min;
+              }
+    </script>
+  </body>
 </html>
