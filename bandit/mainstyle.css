@@ -1,16 +1,59 @@
-.Header {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 30%;
-  }
-
-
-
+html {
+  overflow-x: hidden !important;
+}
 body {
-    background-image: url("bandit_background.jpg");
-  }
-
-
-
-  
+  margin: 0;
+  background-image: url("bandit_index.png");
+}
+.header {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30em;
+  height: 10em;
+}
+menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background-color: rgba(247, 233, 207, 0);
+  z-index: 2;
+}
+list {
+  float: left;
+}
+list a {
+  display: block;
+  width: 60%;
+  text-align: center;
+  padding: 14px 16px;
+  color: white;
+  text-decoration: none;
+  font-family: verdana;
+}
+list a:hover {
+  border-bottom: 3px solid gray;
+  color: black;
+}
+list a.active {
+  background-color: white;
+  border-bottom: 3px solid gray;
+  color: black;
+}
+container {
+  margin-top: 3em;
+  display:block;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: content-box;
+  width: 60em;
+  height: 30em;
+  border: 3px solid white;
+}
+footer {
+  height:5em;
+}
