@@ -27,7 +27,6 @@
         .then(res => {
           console.log(res); // logging step to check what we got
           return res;})
-        .then(res => res.data.map(c => c.course_id + ": " + c.name))
         .then(courses => {
             const element = document.querySelector(".list")
             element.innerHTML = " ";
