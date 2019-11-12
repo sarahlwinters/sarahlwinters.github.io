@@ -45,13 +45,10 @@ app.get('/api', (req, res) => {
   const baseURL = 'https://api.umd.io/v0/courses/list';
   fetch(baseURL)
     .then((r) => r.json())
-    .then((course) => {
-      const inst = course.filter(course => course.dept_id === "INST")
-      const result = inst.map(c => ({
-        course_id: c.course_id,
-        name: c.name
-      }))
-      console.log(result);
+    .then((course) => {course.filter(c => c.dept_id === "INST")})
+    .then((course) => course.map(c => c.course_id + ": " + c.name))
+    .then((result) => {
+    console.log(result);
       res.send({ data: result });
     })
     .catch((err) => {
